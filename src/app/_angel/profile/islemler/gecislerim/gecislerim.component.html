@@ -1,1 +1,91 @@
-<p>gecislerim works!</p>
+<mat-tab-group mat-stretch-tabs="false">
+
+    <mat-tab label="Bugün">
+        <!-- The Timeline -->
+        <ul class="timeline">
+            <!-- Item 1 -->
+            <li *ngFor="let item of gunlukGecisler">
+                <ng-container *ngIf="item.hareketTipi == '1'">
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">{{item.tarih}}</span>
+                            <span class="time-wrapper"><span class="time">{{item.saat}}</span></span>
+                        </div>
+                        <div class="desc">Zemin PDKS Cihazından Giriş Yapıldıı</div>
+                    </div>
+                </ng-container>
+
+                <ng-container *ngIf="item.hareketTipi == '-1'">
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">{{item.tarih}}</span>
+                            <span class="time-wrapper"><span class="time">{{item.saat}}</span></span>
+                        </div>
+                        <div class="desc">Zemin PDKS Cihazından Çıkış Yapıldıı</div>
+                    </div>
+                </ng-container>
+
+            </li>
+        </ul>
+
+    </mat-tab>
+
+    <mat-tab label="Haftalık">
+        <!-- The Timeline -->
+        <ul class="timeline">
+            <!-- Item 1 -->
+            <li *ngFor="let item of haftalikGecisler">
+                <ng-container *ngIf="item.hareketTipi == '1'">
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">{{item.tarih}}</span>
+                            <span class="time-wrapper"><span class="time">{{item.saat}}</span></span>
+                        </div>
+                        <div class="desc">Zemin PDKS Cihazından Giriş Yapıldıı</div>
+                    </div>
+                </ng-container>
+
+                <ng-container *ngIf="item.hareketTipi == '-1'">
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">{{item.tarih}}</span>
+                            <span class="time-wrapper"><span class="time">{{item.saat}}</span></span>
+                        </div>
+                        <div class="desc">Zemin PDKS Cihazından Çıkış Yapıldıı</div>
+                    </div>
+                </ng-container>
+
+            </li>
+        </ul>
+    </mat-tab>
+
+    <mat-tab label="Aylık">
+        <!-- The Timeline -->
+        <ul class="timeline">
+            <!-- Item 1 -->
+            <li *ngFor="let item of haftalikGecisler">
+                <ng-container *ngIf="item.hareketTipi == '1'">
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">{{item.tarih}}</span>
+                            <span class="time-wrapper"><span class="time">{{item.saat}}</span></span>
+                        </div>
+                        <div class="desc">Zemin PDKS Cihazından Giriş Yapıldıı</div>
+                    </div>
+                </ng-container>
+
+                <ng-container *ngIf="item.hareketTipi == '-1'">
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">{{item.tarih}}</span>
+                            <span class="time-wrapper"><span class="time">{{item.saat}}</span></span>
+                        </div>
+                        <div class="desc">Zemin PDKS Cihazından Çıkış Yapıldıı</div>
+                    </div>
+                </ng-container>
+
+            </li>
+        </ul>
+    </mat-tab>
+
+</mat-tab-group>

@@ -1,13 +1,14 @@
 <div class="container-fluid">
   <div class="card mb-5 mb-xl-10">
     <div class="card-body pt-9 pb-0">
-      <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+      <div class="d-flex flex-wrap flex-sm-nowrap mb-3" *ngIf="user$ | async as _user">
         <div class="me-7 mb-4">
           <div class="
                   symbol symbol-100px symbol-lg-160px symbol-fixed
                   position-relative
                 ">
-            <img src="./assets/media/avatars/300-1.jpg" alt="Metronic" />
+            <img alt="Logo" src="{{'data:image/jpg;base64,' + _user.fotoimage}}" />
+
             <div class="
                     position-absolute
                     translate-middle
@@ -25,13 +26,14 @@
 
         <div class="flex-grow-1">
           <div class="
+                  row
                   d-flex
                   justify-content-between
                   align-items-start
                   flex-wrap
                   mb-2
                 ">
-            <div class="d-flex flex-column">
+            <div class="col-6 d-flex flex-column">
               <div class="d-flex align-items-center mb-2">
                 <a class="
                         text-gray-800 text-hover-primary
@@ -40,7 +42,8 @@
                         me-1
                         cursor-pointer
                       ">
-                  Max Smith
+                  {{ _user.loginname }}
+
                 </a>
                 <a class="cursor-pointer">
                   <span [inlineSVG]="
@@ -56,7 +59,7 @@
                         px-3
                         cursor-pointer
                       " data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">
-                  Upgrade to Pro
+                  İşe Giriş Tarihi
                 </a>
               </div>
 
@@ -72,7 +75,7 @@
                   <span [inlineSVG]="
                           './assets/media/icons/duotune/communication/com006.svg'
                         " class="svg-icon svg-icon-4 me-1"></span>
-                  Developer
+                  {{ _user.firmaad }}
                 </a>
                 <a class="
                         d-flex
@@ -85,7 +88,7 @@
                   <span [inlineSVG]="
                           './assets/media/icons/duotune/general/gen018.svg'
                         " class="svg-icon svg-icon-4 me-1"></span>
-                  SF, Bay Area
+                  {{ _user.gorevad }}
                 </a>
                 <a class="
                         d-flex
@@ -97,12 +100,45 @@
                   <span [inlineSVG]="
                           './assets/media/icons/duotune/communication/com011.svg'
                         " class="svg-icon svg-icon-4 me-1"></span>
-                  max@kt.com
+                  {{ _user.customerName }}
                 </a>
               </div>
             </div>
 
-            <div class="d-flex my-4">
+            
+            <div class="col-4 d-flex flex-column flex-grow-1 mr-2">
+              
+              <form class="example-form" [formGroup]="myControl">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Vekalet Profil Değişimi</mat-label>
+                  <input type="text"
+                         placeholder="Pick one"
+                         aria-label="Vekalet Profil Değişimi"
+                         matInput
+                         formControlName="vekilSec"
+                         [matAutocomplete]="auto">
+                  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+              
+            </div>
+
+            <div class="col-2">
+              <button class="btn btn-primary" mat-button [matMenuTriggerFor]="talepler">Talep Oluştur</button>
+              <mat-menu #talepler="matMenu">
+                <button mat-menu-item >İzin</button>
+                <button mat-menu-item >Fazla Mesai</button>
+                <button mat-menu-item >Adres Değişiklik</button>
+                <button mat-menu-item >Araç</button>
+                <button mat-menu-item >Eğitim</button>
+              </mat-menu>
+            </div>
+
+            <!-- <div class="d-flex my-4">
               <a class="btn btn-sm btn-light me-2 cursor-pointer" id="kt_user_follow_button">
                 <span [inlineSVG]="'./assets/media/icons/duotune/arrows/arr012.svg'"
                   class="svg-icon svg-icon-3 d-none"></span>
@@ -122,9 +158,9 @@
                       " data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
                   <i class="bi bi-three-dots fs-3"></i>
                 </button>
-                <!-- <app-dropdown-menu1></app-dropdown-menu1> -->
+                <app-dropdown-menu1></app-dropdown-menu1>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="d-flex flex-wrap flex-stack">
@@ -140,13 +176,13 @@
                         mb-3
                       ">
                   <div class="d-flex align-items-center">
-                    <span [inlineSVG]="
+                    <!-- <span [inlineSVG]="
                             './assets/media/icons/duotune/arrows/arr066.svg'
-                          " class="svg-icon svg-icon-3 svg-icon-success me-2"></span>
-                    <div class="fs-2 fw-bolder">4500$</div>
+                          " class="svg-icon svg-icon-3 svg-icon-success me-2"></span> -->
+                    <div class="fs-2 fw-bolder">45</div>
                   </div>
 
-                  <div class="fw-bold fs-6 text-gray-400">Earnings</div>
+                  <div class="fw-bold fs-6 text-gray-400">Kıdem</div>
                 </div>
 
                 <div class="
@@ -159,13 +195,13 @@
                         mb-3
                       ">
                   <div class="d-flex align-items-center">
-                    <span [inlineSVG]="
+                    <!-- <span [inlineSVG]="
                             './assets/media/icons/duotune/arrows/arr065.svg'
-                          " class="svg-icon svg-icon-3 svg-icon-danger me-2"></span>
-                    <div class="fs-2 fw-bolder">75</div>
+                          " class="svg-icon svg-icon-3 svg-icon-danger me-2"></span> -->
+                    <div class="fs-2 fw-bolder">5</div>
                   </div>
 
-                  <div class="fw-bold fs-6 text-gray-400">Projects</div>
+                  <div class="fw-bold fs-6 text-gray-400">Kullanılan</div>
                 </div>
 
                 <div class="
@@ -178,13 +214,13 @@
                         mb-3
                       ">
                   <div class="d-flex align-items-center">
-                    <span [inlineSVG]="
+                    <!-- <span [inlineSVG]="
                             './assets/media/icons/duotune/arrows/arr066.svg'
-                          " class="svg-icon svg-icon-3 svg-icon-success me-2"></span>
-                    <div class="fs-2 fw-bolder">60%</div>
+                          " class="svg-icon svg-icon-3 svg-icon-success me-2"></span> -->
+                    <div class="fs-2 fw-bolder">60</div>
                   </div>
 
-                  <div class="fw-bold fs-6 text-gray-400">Success Rate</div>
+                  <div class="fw-bold fs-6 text-gray-400">Devir</div>
                 </div>
               </div>
             </div>
@@ -197,11 +233,11 @@
                     mt-3
                   ">
               <div class="d-flex justify-content-between w-100 mt-auto mb-2">
-                <span class="fw-bold fs-6 text-gray-400">Profile Compleation</span>
+                <span class="fw-bold fs-6 text-gray-400">Kullanılan izin yüzdesi</span>
                 <span class="fw-bolder fs-6">50%</span>
               </div>
               <div class="h-5px mx-3 w-100 bg-light mb-3">
-                <div class="bg-success rounded h-5px" role="progressbar" [style.width]="'50%'"></div>
+                <div class="bg-success rounded h-5px" role="progressbar" [style.width]="'16.66666666666667%'"></div>
               </div>
             </div>
           </div>
@@ -237,32 +273,27 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-active-primary me-6" routerLink="taleplerim"
-              routerLinkActive="active">
+            <a class="nav-link text-active-primary me-6" routerLink="taleplerim" routerLinkActive="active">
               Taleplerim
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-active-primary me-6" routerLink="ziyaretci_taleplerim"
-              routerLinkActive="active">
+            <a class="nav-link text-active-primary me-6" routerLink="ziyaretci_taleplerim" routerLinkActive="active">
               Ziyaretçi Taleplerim
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-active-primary me-6" routerLink="mobil_lokasyon"
-              routerLinkActive="active">
+            <a class="nav-link text-active-primary me-6" routerLink="mobil_lokasyon" routerLinkActive="active">
               Mobil Lokasyon
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-active-primary me-6" routerLink="task_listem"
-              routerLinkActive="active">
+            <a class="nav-link text-active-primary me-6" routerLink="task_listem" routerLinkActive="active">
               Task Listem
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-active-primary me-6" routerLink="takimim"
-              routerLinkActive="active">
+            <a class="nav-link text-active-primary me-6" routerLink="takimim" routerLinkActive="active">
               Takımım
             </a>
           </li>
