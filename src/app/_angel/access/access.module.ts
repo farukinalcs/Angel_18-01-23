@@ -31,6 +31,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogWidget1001Component } from './access-data-widget/widget1001/dialog-widget1001/dialog-widget1001.component';
 import { FullScreenDivComponent } from '../shared/full-screen-div/full-screen-div.component';
+import { MatListModule } from '@angular/material/list';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -74,7 +76,9 @@ import { FullScreenDivComponent } from '../shared/full-screen-div/full-screen-di
     MatFormFieldModule,
     MatInputModule,
     NgApexchartsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
+    ReactiveFormsModule
 
 
   ]

@@ -63,8 +63,10 @@
                         <i class="fa">&#xf00d;</i>
                     </a>    
                 </div>
-    
-                <app-parent-widget [widget]="item" [resizeEvent]="resizeEvent"></app-parent-widget>
+                
+                <div class="gridster-item-content">
+                    <app-parent-widget [widget]="item" [resizeEvent]="resizeEvent"></app-parent-widget>
+                </div>
                 
             </div>
     
@@ -96,25 +98,31 @@
 
 <ng-container *ngIf="dashboard2.length > 0">
     <gridster class="options2 mt-4" [options]="options2" >
-        <gridster-item #fullScreen [item]="item" class="rounded-lg overflow-auto" *ngFor="let item of dashboard2" >
+        <gridster-item #fullScreen [item]="item" class="gridsterfit overflow-auto" *ngFor="let item of dashboard2" >
                 <div id="gridsterItem">
                     <div class="row" style="width: 98%; margin-left: 6px;">
-                        <div class="col-6">
+                        <div class="col-3 d-flex justify-content-start align-items-center">
                             <h6 class="card-label text-hover-dark mt-2 font-weight-bolder text-light">{{item.type}}</h6>
                         </div>
                         
-                        <div class="col-6 d-flex justify-content-end removeIcon2">
-                            <app-full-screen-div [div]="this.divRef" ></app-full-screen-div>
+                        <div class="col-9 d-flex justify-content-end align-items-center removeIcon2">
+                            <a class="ml-4 text-hover-dark ">
+                                <i class="fa fa-hand text-light"></i>
+                            </a>
+
+                            <app-full-screen-div [div]="this.divRef"></app-full-screen-div>
                             
                             <a  (mousedown)="removeItem2($event, item)"
                                 (touchstart)="removeItem2($event, item)"
-                                class="ml-4 mb-4 text-hover-dark">
+                                class="ml-4 text-hover-dark ">
                                 <i class="fa text-light">&#xf00d;</i>
                             </a>
                         </div>
                     </div>
 
-                    <app-parent-widget2 [widget]="item" [resizeEvent]="resizeEvent"></app-parent-widget2>
+                    <div class="gridster-item-content">
+                        <app-parent-widget2 [widget]="item" [resizeEvent]="resizeEvent"></app-parent-widget2>
+                    </div>
 
                 </div>
         </gridster-item>

@@ -5,27 +5,35 @@ const Routing: Routes = [
     path: 'dashboard',
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+      data: { layout: 'light-sidebar' },
+
   },
   {
     path: 'profile',
     loadChildren: () =>
       import('../_angel/profile/profile.module').then((m) => m.ProfileModule),
-    // data: { layout: 'light-sidebar' },
+      data: { layout: 'light-sidebar' },
   },
   {
     path: 'access',
     loadChildren: () =>
       import('../_angel/access/access.module').then((m) => m.AccessModule),
+      data: { layout: 'light-sidebar' },
+
   },
   {
     path: 'puantaj',
     loadChildren: () =>
       import('../_angel/puantaj/puantaj.module').then((m) => m.PuantajModule),
+      data: { layout: 'light-sidebar' },
+
   },
   {
     path: 'builder',
     loadChildren: () =>
       import('./builder/builder.module').then((m) => m.BuilderModule),
+      data: { layout: 'light-sidebar' },
+
   },
   // {
   //   path: 'crafted/pages/profile',
