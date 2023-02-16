@@ -41,6 +41,9 @@ const getThemeModeFromLocalStorage = (lsKey: string): ThemeModeType => {
   providedIn: 'root',
 })
 export class ThemeModeService {
+
+  angularMaterialTheme : any;
+
   public mode: BehaviorSubject<ThemeModeType> =
     new BehaviorSubject<ThemeModeType>(
       getThemeModeFromLocalStorage(themeModeLSKey)
@@ -83,5 +86,26 @@ export class ThemeModeService {
       localStorage.setItem(themeMenuModeLSKey, _mode);
     }
     document.location.reload()
+
+    if (_mode === 'dark') {
+      
+      this.angularMaterialTheme = "~@angular/material/prebuilt-themes/purple-green.css"
+    } else {
+      this.angularMaterialTheme = "~@angular/material/prebuilt-themes/indigo-pink.css"
+    }
+  }
+
+  public getSelectedThemeColor(): string {
+    const selectedMode = this.mode.value;
+    switch (selectedMode) {
+      case 'dark':
+        return 'pink-blue-grey';
+      case 'light':
+        return 'indigo-pink';
+      case 'system':
+        return ThemeModeComponent.getSystemMode() === 'dark' ? 'pink-blue-grey' : 'indigo-pink';
+      default:
+        return 'indigo-pink';
+    }
   }
 }

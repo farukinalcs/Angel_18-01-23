@@ -14,8 +14,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit, OnDestroy {
   // KeenThemes mock, change it to:
   defaultAuth: any = {
-    email: 'meyer',
-    password: 'Meyer1878**',
+    userName: 'meyer',
+    password: '18781878',
   };
   loginForm: FormGroup;
   hasError: boolean;
@@ -52,8 +52,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   initForm() {
     this.loginForm = this.fb.group({
-      email: [
-        this.defaultAuth.email,
+      userName: [
+        this.defaultAuth.userName,
         Validators.compose([
           // Validators.required,
           // Validators.email,
@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   submit() {
     this.hasError = false;
     const loginSubscr = this.authService
-      .login(this.f.email.value, this.f.password.value)
+      .login(this.f.userName.value, this.f.password.value)
       .pipe(first())
       .subscribe((user: UserModel) => {
         if (user) {

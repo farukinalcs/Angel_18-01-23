@@ -7,6 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TakimimComponent implements OnInit {
 
+  panelOpenState = false;
+
+  response : any[] = [
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+    {durum : 'Dışarıda', gelmedi : 'Gelmedi', bekleyenizintalep : '0', bekleyenfmtalep : '6', geckalma : '0', erkencikma : '0', fotoimage : '', ad : 'Ad', soyad : 'Soyad', ggiris : '16-01-2023 07:58:09', gcikis : '16-01-2023 18:02:29', sicilno : '00000233', mesaiaciklama : 'Hafta İçi'},
+  ]
   constructor() { }
 
   ngOnInit(): void {

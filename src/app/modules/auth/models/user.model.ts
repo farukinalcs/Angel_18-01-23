@@ -51,8 +51,20 @@ export class UserModel extends AuthModel {
 
 
   // };
+  altfirmaad : any;
+  direktorlukad : any;
+  pozisyonad : any;
+  yakaad : any;
+  yetkigrubu : any;
+  firmaad : any;
+  customerName : any;
+  gorevad : any;
+  bolumad : any;
+  loginname : any;
+  fotoimage : any;
   tokenid : string;
   id: number;
+
   username: string;
   password: string;
   fullname: string;
@@ -82,6 +94,20 @@ export class UserModel extends AuthModel {
   //   this.socialNetworks = user.socialNetworks;
   // }
   setUser(user: any) {
+    this.firmaad = user.firmaad;
+    this.customerName = user.customerName;
+
+
+    this.altfirmaad = user.altfirmaad;
+    this.pozisyonad = user.pozisyonad;
+    this.yakaad = user.yakaad;
+    this.yetkigrubu = user.yetkigrubu;
+    
+    this.direktorlukad = user.direktorlukad;
+    this.gorevad = user.gorevad;
+    this.bolumad = user.bolumad;
+    this.fotoimage = user.fotoimage;
+    this.loginname = user.loginname;
     this.tokenid = user.tokenid;
     this.id = user.id;
     this.username = user.username || '';

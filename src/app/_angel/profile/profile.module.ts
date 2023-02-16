@@ -22,6 +22,25 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DialogLokasyonDetayComponent } from './talepler/mobillokasyon/dialog-lokasyon-detay/dialog-lokasyon-detay.component';
+import { DialogFazlaMesaiTalebiComponent } from './talep-olustur/dialog-fazla-mesai-talebi/dialog-fazla-mesai-talebi.component';
+import { DialogZiyaretciTalebiComponent } from './talep-olustur/dialog-ziyaretci-talebi/dialog-ziyaretci-talebi.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DialogSaatlikIzinTalebiComponent } from './talep-olustur/dialog-saatlik-izin-talebi/dialog-saatlik-izin-talebi.component';
+import { DialogGunlukIzinTalebiComponent } from './talep-olustur/dialog-gunluk-izin-talebi/dialog-gunluk-izin-talebi.component';
+import { TranslationModule } from 'src/app/modules/i18n';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +54,12 @@ import { MatIconModule } from '@angular/material/icon';
     MobillokasyonComponent,
     TasklistemComponent,
     TakimimComponent,
-    ProfileDataWidgetComponent
+    ProfileDataWidgetComponent,
+    DialogLokasyonDetayComponent,
+    DialogFazlaMesaiTalebiComponent,
+    DialogZiyaretciTalebiComponent,
+    DialogSaatlikIzinTalebiComponent,
+    DialogGunlukIzinTalebiComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +78,21 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatCheckboxModule,
+    MatAutocompleteModule,
+    MatStepperModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    FormsModule,
+    TranslationModule
     
   ]
 })
