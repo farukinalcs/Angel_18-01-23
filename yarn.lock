@@ -241,7 +241,7 @@
     "uuid" "8.3.2"
     "yargs" "17.4.1"
 
-"@angular/common@^13.0.0", "@angular/common@^14.0.0", "@angular/common@^14.0.0 || ^15.0.0", "@angular/common@>=13.0.0", "@angular/common@14.0.0":
+"@angular/common@^13.0.0", "@angular/common@^14.0.0", "@angular/common@^14.0.0 || ^15.0.0", "@angular/common@>= 12.0.0", "@angular/common@>=13.0.0", "@angular/common@14.0.0":
   "integrity" "sha512-VYydSXelPlcAnWZs6SKkOxV+rNe8zOtHKLf9jBTYT5nP5P66+va4zITo1C9bs5tbK+mRssayf615+SIGEXyJFg=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-14.0.0.tgz"
   "version" "14.0.0"
@@ -271,7 +271,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/core@^13.0.0", "@angular/core@^14.0.0", "@angular/core@^14.0.0 || ^15.0.0", "@angular/core@>=13.0.0", "@angular/core@14.0.0":
+"@angular/core@^13.0.0", "@angular/core@^14.0.0", "@angular/core@^14.0.0 || ^15.0.0", "@angular/core@>= 12.0.0", "@angular/core@>=13.0.0", "@angular/core@14.0.0":
   "integrity" "sha512-Mj3r8iMlWfMbY+9DRUFZx1gKnA27Jwx3ff/VXeXBgfxaEKDYmlZSnliZSV6ssiHSUwn/U6yxDXFgcZL090zNBQ=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-14.0.0.tgz"
   "version" "14.0.0"
@@ -2274,6 +2274,18 @@
   dependencies:
     "loader-utils" "^2.0.0"
     "regex-parser" "^2.2.11"
+
+"ag-grid-angular@^29.0.0":
+  "integrity" "sha512-KXzfcHC0cdzSbL7plgPBGFm//WoQpkqM5PmB2+aFWYEz4g8gW1Z8MKOKmBModvM8MjLTkY04EtUoqEAGEdzXew=="
+  "resolved" "https://registry.npmjs.org/ag-grid-angular/-/ag-grid-angular-29.0.0.tgz"
+  "version" "29.0.0"
+  dependencies:
+    "tslib" "^2.3.0"
+
+"ag-grid-community@^29.0.0", "ag-grid-community@~29.0.0":
+  "integrity" "sha512-onAQIqjhP1L93W5myAsfLBMBUyZPrWDb8FRulJuhjQKo8DEA4GSZ+oJHxwwLymm4biLu54zvZ+9GkTftha8gAg=="
+  "resolved" "https://registry.npmjs.org/ag-grid-community/-/ag-grid-community-29.0.0.tgz"
+  "version" "29.0.0"
 
 "agent-base@^6.0.2", "agent-base@6":
   "integrity" "sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ=="
