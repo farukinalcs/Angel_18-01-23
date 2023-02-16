@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { AgGridModule } from 'ag-grid-angular';
 import { PuantajRoutingModule } from './puantaj-routing.module';
 import { PuantajdashboardComponent } from './puantajdashboard/puantajdashboard.component';
 
@@ -11,7 +11,8 @@ import { PuantajdashboardComponent } from './puantajdashboard/puantajdashboard.c
   ],
   imports: [
     CommonModule,
-    PuantajRoutingModule
+    PuantajRoutingModule,
+    AgGridModule
   ]
 })
 export class PuantajModule { }
